@@ -1,0 +1,76 @@
+<div id="intro">
+	<h1>Elis Paper Scissor Rock Game</h1>
+	<p> Type Rock - Paper - or Scissors to Play</p>
+</div>
+<form id="form" onsubmit="return false;">
+    <input style="position:absolute; top:20%;  width:40%;" type="text" id="userInput" />
+    <input style="position:absolute; top:25%;  width:40%;" type="submit" onclick="playGame();" />
+</form>
+
+
+
+<script>
+var userChoice;
+var computerChoice;
+
+function getComputerChoice(){
+	computerChoice = Math.random();
+	if (computerChoice < 0.34) {
+		computerChoice = "rock";
+	} else if(computerChoice <= 0.67) {
+		computerChoice = "paper";
+	} else {
+		computerChoice = "scissors";
+	} 
+}
+
+function getUserChoice() {
+    userChoice = document.getElementById("userInput").value;	
+}
+
+
+var compare = function(user, computer){
+	
+    if (user === computer){
+        alert("It's a tie!");
+    }
+    
+    else if (user === "rock"){
+        if (computer === "scissors"){
+            alert( "You win!! Computer had scissors");
+        }
+        else {
+            alert( "You lost. Computer had paper");
+        }
+    }
+    
+    else if (user === "paper"){
+        if (computer === "rock"){
+            alert( "You win!! Computer had rocks");
+        }
+        else {
+            alert( "Computer wins. He had scissors");
+        }
+    }
+    
+    else if (user === "scissors"){
+        if (computer === "rock"){
+            alert( "Computer won. He had rock");
+        }
+        else {
+            alert( "You win!! Computer had paper");
+        }
+    }
+	
+}
+
+
+
+function playGame(){
+	getUserChoice();
+	getComputerChoice();
+	console.log("Computer: " + computerChoice + ", User: " + userChoice);
+	compare(userChoice,computerChoice);
+}
+
+</script>
