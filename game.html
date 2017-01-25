@@ -1,12 +1,16 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="rockpaper_style.css">
+</head>
+
 <div id="intro">
 	<h1>Elis Paper Scissor Rock Game</h1>
 	<p> Type <b>Rock, Paper</b>, or <b>Scissors</b> to Play</p>
 </div>
 <form id="form" onsubmit="return false;" style="position:relative; width:100%">
 	<div id="buttons">
-    <input type="submit" onclick="rock();" value="Rock"/>
-	<input type="submit" onclick="paper();" value="Paper"/>
-	<input type="submit" onclick="scissor();" value="Scissors"/>
+    <input type="button" onclick="rock();" id="Rock" class="gameButton"/>
+	<input type="button" onclick="paper();" id="Paper" class="gameButton"/>
+	<input type="button" onclick="scissor();" id="Scissors" class="gameButton"/>
 	<input type="hidden" id="userInput" value="0">
 	<div style="clear:both"></div>
 	</div>	
@@ -60,28 +64,28 @@ var compare = function(user, computer){
     
     else if (user === "rock"){
         if (computer === "scissors"){
-			document.getElementById("outcome").innerHTML = "You win!! Computer had scissors";
+			document.getElementById("outcome").innerHTML = "You win!! I had scissors";
         }
         else {
-			document.getElementById("outcome").innerHTML = "You lost. Computer had paper";
+			document.getElementById("outcome").innerHTML = "You lost. I had paper";
         }
     }
     
     else if (user === "paper"){
         if (computer === "rock"){
-			document.getElementById("outcome").innerHTML = "You win!! Computer had rocks";
+			document.getElementById("outcome").innerHTML = "You win!! I had rocks";
         }
         else {
-			document.getElementById("outcome").innerHTML = "Computer wins. He had scissors";
+			document.getElementById("outcome").innerHTML = "Computer wins. I had scissors";
         }
     }
     
     else if (user === "scissors"){
         if (computer === "rock"){
-			document.getElementById("outcome").innerHTML = "Computer won. He had rock";
+			document.getElementById("outcome").innerHTML = "Computer won. I had rock";
         }
         else {
-			document.getElementById("outcome").innerHTML ="You win!! Computer had paper";
+			document.getElementById("outcome").innerHTML ="You win!! I had paper";
         }
     }
 	
