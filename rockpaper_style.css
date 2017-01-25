@@ -1,0 +1,45 @@
+#Rock {
+  background-image: url(images/rock.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color:white;
+  background-size:contain;
+  /* put the height and width of your image here */
+  height: 200px;
+  width: 200px;
+  border: none;
+  cursor:pointer;
+  
+}
+
+
+#Paper {
+  background-image: url(images/paper.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color:white;
+  background-size:contain;
+  /*put the height and width of your image here */
+  height: 200px;
+  width: 200px;
+  border: none;
+  cursor:pointer;
+}
+
+#Scissors {
+  background-image: url(images/scissors.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color:white;
+  background-size:contain;
+  /* put the height and width of your image here */
+  height: 200px;
+  width: 200px;
+  border: none;
+  cursor:pointer;
+  
+}
+
+.gameButton:hover{
+	 box-shadow: 0px 2px 5px #888888;
+}
