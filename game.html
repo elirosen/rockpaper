@@ -1,10 +1,15 @@
 <div id="intro">
 	<h1>Elis Paper Scissor Rock Game</h1>
-	<p> Type: <b>Rock, Paper</b>, or <b>Scissors</b> to Play</p>
+	<p> Type <b>Rock, Paper</b>, or <b>Scissors</b> to Play</p>
 </div>
 <form id="form" onsubmit="return false;" style="position:relative; width:100%">
-    <input style="" type="text" id="userInput" />
-    <input style="" type="submit" onclick="playGame();" />
+	<div id="buttons">
+    <input type="submit" onclick="rock();" value="Rock"/>
+	<input type="submit" onclick="paper();" value="Paper"/>
+	<input type="submit" onclick="scissor();" value="Scissors"/>
+	<input type="hidden" id="userInput" value="0">
+	<div style="clear:both"></div>
+	</div>	
 </form>
 
 <div id="result">
@@ -25,6 +30,22 @@ computerChoice = Math.random();
 		computerChoice = "scissors";
 	}
 }
+
+function rock(){
+	document.getElementById("userInput").value="rock";
+	playGame();
+}
+
+function paper(){
+	document.getElementById("userInput").value="paper";
+	playGame();
+}
+
+function scissor(){
+	document.getElementById("userInput").value="scissors";
+	playGame();
+}
+
 
 function getUserChoice() {
     userChoice = document.getElementById("userInput").value;	
@@ -65,7 +86,6 @@ var compare = function(user, computer){
     }
 	
 }
-
 
 
 function playGame(){
