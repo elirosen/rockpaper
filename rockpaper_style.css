@@ -1,3 +1,7 @@
+body{
+	font-family:monospace;
+}
+
 #Rock {
   background-image: url(images/rock.png);
   background-repeat: no-repeat;
@@ -11,7 +15,6 @@
   cursor:pointer;
   
 }
-
 
 #Paper {
   background-image: url(images/paper.png);
@@ -39,6 +42,37 @@
   cursor:pointer;
   
 }
+
+#scoreKeeperTable{
+	text-align:center;
+	border-collapse:collapse;
+}
+
+table, td, th {
+    border: 5px solid #677482;
+	padding:15px;
+	min-width:150px;
+	font-size:2rem;
+}
+
+h1{
+	font-size:3em;
+}
+
+p {
+	font-size:1rem;
+}
+
+th{
+	background-color:#D9E1E9;
+	color:#23A0D3;
+}
+
+td{
+	font-size:2em;
+	font-weight:bold;
+}
+
 
 .gameButton:hover{
 	 box-shadow: 0px 2px 5px #888888;

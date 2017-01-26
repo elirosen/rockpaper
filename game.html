@@ -1,9 +1,9 @@
 <head>
   <link rel="stylesheet" type="text/css" href="rockpaper_style.css">
 </head>
-
+<body>
 <div id="intro">
-	<h1>Elis Paper Scissor Rock Game</h1>
+	<h1>Eli's Paper Scissor Rock Game</h1>
 	<p> Click on an Image to Play </p>
 </div>
 <form id="form" onsubmit="return false;" style="position:relative; width:100%">
@@ -20,6 +20,20 @@
 	<h1 id="outcome"></h1>
 </div>
 
+<div>
+	<table align="center" id="scoreKeeperTable">
+		<tr>
+			<th>You</th>
+			<th>Computer</th>
+		</tr>
+		<tr>
+			<td id="userScoreDisplay">0</td>
+			<td id="computerScoreDisplay">0</td>
+		</tr>
+	</table>
+	
+</div>
+</body>
 <script>
 var userChoice;
 var computerChoice;
@@ -65,32 +79,50 @@ var compare = function(user, computer){
     else if (user === "rock"){
         if (computer === "scissors"){
 			document.getElementById("outcome").innerHTML = "You win!! I had scissors";
+			increaseUserScoreValue();
         }
         else {
 			document.getElementById("outcome").innerHTML = "You lost. I had paper";
+			increaseComputerScoreValue();
         }
     }
     
     else if (user === "paper"){
         if (computer === "rock"){
 			document.getElementById("outcome").innerHTML = "You win!! I had rocks";
+			increaseUserScoreValue();
         }
         else {
 			document.getElementById("outcome").innerHTML = "Computer wins. I had scissors";
+			increaseComputerScoreValue();
         }
     }
     
     else if (user === "scissors"){
         if (computer === "rock"){
 			document.getElementById("outcome").innerHTML = "Computer won. I had rock";
+			increaseComputerScoreValue();
         }
         else {
 			document.getElementById("outcome").innerHTML ="You win!! I had paper";
+			increaseUserScoreValue();
         }
     }
 	
 }
 
+var userScoreValue = 0;
+var computerScoreValue = 0;
+
+function increaseUserScoreValue(){
+	userScoreValue = userScoreValue + 1;
+	document.getElementById("userScoreDisplay").innerHTML = userScoreValue;
+}
+
+function increaseComputerScoreValue(){
+	computerScoreValue = computerScoreValue + 1;
+	document.getElementById("computerScoreDisplay").innerHTML = computerScoreValue;
+}
 
 function playGame(){
 	getUserChoice();
